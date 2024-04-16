@@ -1,3 +1,12 @@
+/*************************************************************
+ * Dupla: Mauro Roberto Trevisan e Ramon Godoy Izidoro
+ * Modificações: 
+ * 1. Foram adicionadas verificações para diferenciar mensagens 
+ * de sistema de mensagens de usuário;
+ * 2. A JTextArea foi subtituída por um JTextPane, para fosse
+ * possível difinir atributos como cor e fonte ao texto;
+*************************************************************/
+
 import javax.swing.*;
 import javax.swing.text.*;
 import java.awt.*;
@@ -44,6 +53,7 @@ public class ChatClient {
 
     private void run() throws IOException {
         try {
+            @SuppressWarnings("resource")
             var socket = new Socket(serverAddress, 59001);
             in = new Scanner(socket.getInputStream());
             out = new PrintWriter(socket.getOutputStream(), true);

@@ -1,3 +1,12 @@
+/****************************************************************
+ * Dupla: Mauro Roberto Trevisan e Ramon Godoy Izidoro
+ * Modificações: 
+ * 1. Foram adicionadas substrings ao início das mensagens, para
+ * possibilitar ao cliente diferenciar mensagens de usuário de
+ * mensagens de sistema;
+****************************************************************/
+
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
@@ -87,6 +96,7 @@ public class ChatServer {
                 for (PrintWriter writer : writers) {
                     writer.println("SYSTEM MESSAGE " + name + " has joined");
                 }
+                System.out.println("SYSTEM MESSAGE " + name + " has joined");
                 writers.add(out);
 
                 // Accept messages from this client and broadcast them.
